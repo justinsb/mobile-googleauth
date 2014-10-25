@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0" id="com.justinsb.mobile.googleauth"
+	version="0.1.0">
+	<name>GoogleAuth</name>
+	<description>Google Authentication for Mobile</description>
+	<keywords>cordova,google,authentication</keywords>
+
+	<js-module src="www/googleauth.js" name="GoogleAuth">
+		<clobbers target="GoogleAuth" />
+	</js-module>
+
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="GoogleAuth">
+				<param name="android-package" value="com.justinsb.mobile.googleauth.GoogleAuth" />
+			</feature>
+		</config-file>
+
+		<source-file src="src/com/justinsb/mobile/googleauth/GoogleAuth.java" />
+	</platform>
+</plugin>
