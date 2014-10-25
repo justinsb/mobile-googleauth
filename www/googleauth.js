@@ -8,6 +8,8 @@
   };
 
   GoogleAuth.prototype.getAuthToken = function (options, success, fail) {
+    // XXX: Create one 'standard' callback (with result, err)?
+    // XXX: Map err to exception?
     return cordova.exec(success, fail, 'GoogleAuth', 'getAuthToken', [options]);
   };
 

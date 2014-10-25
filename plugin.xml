@@ -20,6 +20,7 @@
 			</feature>
 		</config-file>
 
-		<source-file src="src/android/com/justinsb/mobile/googleauth/GoogleAuth.java" target-dir="src/com/justinsb/mobile/googleauth/" />
+        <source-file src="src/android/com/justinsb/mobile/googleauth/GoogleAuth.java" target-dir="src/com/justinsb/mobile/googleauth/" />
+        <source-file src="src/android/com/justinsb/mobile/ExtendedCordovaPlugin.java" target-dir="src/com/justinsb/mobile/" />
 	</platform>
 </plugin>
