@@ -4,11 +4,7 @@
   };
 
   GoogleAuth.prototype.chooseAccount = function (options, success, fail) {
-    return cordova.exec(function (args) {
-      success(args);
-    }, function (args) {
-      fail(args);
-    }, 'GoogleAuth', 'chooseAccount', [options]);
+    return cordova.exec(success, fail, 'GoogleAuth', 'chooseAccount', [options]);
   };
 
   window.googleAuth = new GoogleAuth();
