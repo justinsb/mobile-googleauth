@@ -12,6 +12,8 @@
 
 	<!-- android -->
 	<platform name="android">
+        <dependency id="com.google.playservices" />
+
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="GoogleAuth">
 				<param name="android-package" value="com.justinsb.mobile.googleauth.GoogleAuth" />
