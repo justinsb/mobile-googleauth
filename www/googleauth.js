@@ -7,6 +7,10 @@
     return cordova.exec(success, fail, 'GoogleAuth', 'chooseAccount', [options]);
   };
 
+  GoogleAuth.prototype.getAuthToken = function (options, success, fail) {
+    return cordova.exec(success, fail, 'GoogleAuth', 'getAuthToken', [options]);
+  };
+
   window.googleAuth = new GoogleAuth();
 
   // backwards compatibility
