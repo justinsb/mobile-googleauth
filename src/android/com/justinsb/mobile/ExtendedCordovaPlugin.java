@@ -38,7 +38,7 @@ public class ExtendedCordovaPlugin extends CordovaPlugin {
 
     private int nextRequestId = 100;
 
-    void startActivityForResult(Intent intent, ActivityCallback callback) {
+    protected void startActivityForResult(Intent intent, ActivityCallback callback) {
         ActivityTracker tracker = new ActivityTracker(callback);
 
         int requestId;

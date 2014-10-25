@@ -19,6 +19,7 @@ import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
 import com.google.android.gms.common.AccountPicker;
+import com.justinsb.mobile.ExtendedCordovaPlugin;
 
 public class GoogleAuth extends ExtendedCordovaPlugin {
 
@@ -110,6 +111,7 @@ public class GoogleAuth extends ExtendedCordovaPlugin {
             }
         };
 
+        // XXX: Do we need a threadpool task if getAuthToken is going to be on a threadpool?
         activityCallback.runOnThreadPool = true;
 
         startActivityForResult(permissionsIntent, activityCallback);
@@ -117,11 +119,10 @@ public class GoogleAuth extends ExtendedCordovaPlugin {
 
     void getAuthToken(String accountName, String scope, boolean interactive, CallbackContext callback)
             throws JSONException {
-        // XXX: Wrap in a threadpool task to make async?
-
         Activity activity = this.cordova.getActivity();
 
         try {
+            // XXX: This should always be in a threadpool...
             String token = GoogleAuthUtil.getToken(activity, accountName, scope);
 
             JSONObject result = new JSONObject();
