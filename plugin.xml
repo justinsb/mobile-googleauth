@@ -18,6 +18,6 @@
 			</feature>
 		</config-file>
 
-		<source-file src="src/com/justinsb/mobile/googleauth/GoogleAuth.java" />
+		<source-file src="src/com/justinsb/mobile/googleauth/GoogleAuth.java" target-dir="src/com/justinsb/mobile/googleauth/" />
 	</platform>
 </plugin>
