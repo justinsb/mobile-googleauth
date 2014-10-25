@@ -1,6 +1,5 @@
 package com.justinsb.mobile.googleauth;
 
-import org.apache.cordova.CordovaActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,7 +32,6 @@ public class GoogleAuth extends CordovaPlugin {
             if (action.equals("chooseAccount")) {
                 JSONObject options = args.getJSONObject(0);
                 chooseAccount(options);
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
                 return true;
             } else {
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
